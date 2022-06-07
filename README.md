@@ -1,1 +1,1 @@
-# Kupiec
+# Kupiec game
