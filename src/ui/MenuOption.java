@@ -1,5 +1,8 @@
 package ui;
 
+
+import java.util.Scanner;
+
 /**
  * Represents an option selectable in a menu
  */
@@ -12,6 +15,7 @@ public class MenuOption {
      * @return
      */
     public String getCaption() {
+
         return caption;
     }
 
@@ -31,5 +35,21 @@ public class MenuOption {
     public MenuOption(String caption, Object payload) {
         this.caption = caption;
         this.payload = payload;
+
+        if(caption.equals("Main menu")) {
+            System.out.println("");
+            System.out.println("Wyjazd");
+            System.out.println("Handel");
+            System.out.println("Kantor");
+            System.out.println("");
+        }
+
+        Scanner sc =  new Scanner(System.in);
+        String choice = sc.next();sc.nextLine();
+
+        if( choice.equals("Wyjazd")) {
+            payload = 1;
+        }
+
     }
 }
