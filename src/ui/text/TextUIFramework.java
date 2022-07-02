@@ -36,7 +36,7 @@ public class TextUIFramework extends AbstractUIFramework {
         do {
             choice = scanner.nextInt();
             scanner.nextLine();
-        } while (choice >= 1 && choice <= menuOptions.size());
+        } while (choice < 1 || choice > menuOptions.size());
 
         for (int i = 0; i < menuOptions.size(); i++) {
             if (menuOptions.get(i).equals(choice - 1)) {
