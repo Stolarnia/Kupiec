@@ -37,9 +37,9 @@ public class Game implements UserStatsProvider {
 
         // TODO
         uiFramework.showMenu(
-            new MenuOption("Main menu", 0),
-            new MenuOption("opcja 2", null),
-            new MenuOption("opcja 3", null)
+            new MenuOption("opcja 1", 0),
+            new MenuOption("opcja 2", 0),
+            new MenuOption("opcja 3", 0)
         );
 
         uiFramework.getInput("fixme - remove this - it's here to pause");

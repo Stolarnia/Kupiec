@@ -1,5 +1,7 @@
 package ui.text;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import ui.AbstractUIFramework;
@@ -10,7 +12,7 @@ import ui.MenuOption;
  */
 public class TextUIFramework extends AbstractUIFramework {
     private final Scanner scanner;
-
+    private ArrayList<Object> menuOptions = new ArrayList();
     /**
      * 
      * @param welcome text to be displayed upon framework startup
@@ -23,8 +25,24 @@ public class TextUIFramework extends AbstractUIFramework {
     @Override
     public MenuOption showMenu(MenuOption... options) {
         showHeader();
+        menuOptions.add(options);
 
-        // TODO Auto-generated method stub
+        for (int i = 0; i < menuOptions.size(); i++) {
+            System.out.println(i + 1 + " " + menuOptions.get(i));
+        }
+
+        System.out.println("Co zamierzasz?");
+        int choice;
+        do {
+            choice = scanner.nextInt();
+            scanner.nextLine();
+        } while (choice >= 1 && choice <= menuOptions.size());
+
+        for (int i = 0; i < menuOptions.size(); i++) {
+            if (menuOptions.get(i).equals(choice - 1)) {
+                return null;
+            }
+        }
         return null;
     }
 
