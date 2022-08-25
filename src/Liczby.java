@@ -19,8 +19,8 @@ public class Liczby {
     }
 
     private void run(UIFramework uiFramework) {
-        int upper = 0;
-        int lower = 1000;
+        int lower = 0;
+        int upper = 1000;
         Choice choice = Choice.Greater; // whatever for the first check
 
         while (choice != Choice.Equal && choice != Choice.Exit) {
@@ -34,9 +34,11 @@ public class Liczby {
             switch (choice) {
                 case Greater: {
                     lower = guess;
+                    break;
                 }
                 case Lower: {
                     upper = guess;
+                    break;
                 }
                 default:
                     break;
