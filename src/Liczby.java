@@ -13,7 +13,6 @@ public class Liczby {
     public static void main(String[] args) {
         Liczby game = new Liczby();
         game.run(new TextUIFramework("Pomyśl jakąś liczbę od 0 do 1000"));
-
     }
 
     private void run(UIFramework uiFramework) {
@@ -23,12 +22,11 @@ public class Liczby {
 
         while (choice != Choice.Equal && choice != Choice.Exit) {
             int guess = (upper + lower) / 2;
-            choice = (Choice)uiFramework.showMenu(
-                new MenuOption("Liczba jest większa niż " + guess, Choice.Greater),
-                new MenuOption("Liczba jest mniejsza niż " + guess, Choice.Lower),
-                new MenuOption("Liczba jest równa " + guess, Choice.Equal),
-                new MenuOption("W dupie to mam!", Choice.Exit)
-            ).getPayload();
+            choice = (Choice) uiFramework.showMenu(
+                    new MenuOption("Liczba jest większa niż " + guess, Choice.Greater),
+                    new MenuOption("Liczba jest mniejsza niż " + guess, Choice.Lower),
+                    new MenuOption("Liczba jest równa " + guess, Choice.Equal),
+                    new MenuOption("W dupie to mam!", Choice.Exit)).getPayload();
             switch (choice) {
                 case Greater: {
                     lower = guess;
