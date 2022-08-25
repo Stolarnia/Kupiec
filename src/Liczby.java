@@ -1,5 +1,3 @@
-import java.util.Random;
-
 import ui.MenuOption;
 import ui.UIFramework;
 import ui.text.TextUIFramework;
